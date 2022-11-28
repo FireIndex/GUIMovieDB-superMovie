@@ -1,0 +1,75 @@
+===1=== (overview)
+-movie-id (id+imdb)
+-title
+Genre
+-Country
+-Duration
+-Release
+Post Updated
+
+
+===2=== (Crew)
+Director
+cast
+
+===3=== (summary)
+summary
+
+===4=== (Links)
+trailer
+<li> <span>poster path</span>{' '} <span> https://image.tmdb.org/t/p/w500{movie.poster_path} </span> </li>
+poster image
+backdrop image
+#array
+[
+    {
+        "file_name" : --set (web, bluray, theater (complet name))
+        "quality" : --set (480P, 720P, 1080P)
+        "size" : --set
+        "forward_on_first_page" : --auto
+        "final_downloading_page" : --auto
+        "downloading_link" : --set
+    },
+]
+=======================================================
+
+
+slug
+Title
+Post Updated
+
+----AUTOMATIC----
+movie-id (id+imdb)
+name
+trailer
+poster-image
+picture
+Genre
+Director
+Actors
+Country
+Duration
+production_companies
+Release
+summary
+
+A - Forward_on_first_page
+short_link
+A - final_downloading_page
+downloading_link
+
+
+-----HIGH SPEED DIRECT LINK (NO GOOGLE DRIVE PERMISSION)-----
+
+#array
+[
+    {
+        "quality" : --set (480P, 720P, 1080P)
+        "size" : --set
+        "forward_on_first_page" : --auto
+        "final_downloading_page" : --auto
+        "downloading_link" : --set
+    },
+]
+
+
