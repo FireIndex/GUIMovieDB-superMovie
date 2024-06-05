@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useGlobalContext } from './Component/Context'
 import Search from './Component/Search'
 import Create from './CRUD/Create'

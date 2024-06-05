@@ -33,7 +33,7 @@ function Read() {
       var currentId = movie.imdb_id ? movie.id + movie.imdb_id : `${movie.id}-m`
       dbDocs.map((curDoc) => {
         Object.keys(curDoc).map((docItem) => {
-          if (curDoc['id'] == currentId) {
+          if (curDoc['id'] === currentId) {
             alreadyStore = true
             data[docItem] = curDoc[docItem]
           }

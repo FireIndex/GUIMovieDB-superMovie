@@ -23,8 +23,8 @@ const Fetch = (type, apiParams) => {
       // console.log('Request')
 
       setIsLoading(false)
-      if (type == 'search' || type == 'movie') {
-        if (data.success == undefined) {
+      if (type === 'search' || type === 'movie') {
+        if (data.success === undefined) {
           if (data.results) {
             setMovies(data.results || data)
           } else {
@@ -33,8 +33,8 @@ const Fetch = (type, apiParams) => {
         } else {
           setMovies([])
         }
-      } else if (type == 'trailer' || type == 'credits') {
-        if (data.success == undefined) {
+      } else if (type === 'trailer' || type === 'credits') {
+        if (data.success === undefined) {
           if (data.results) {
             setTrailer(data.results || data)
           } else {
@@ -52,10 +52,10 @@ const Fetch = (type, apiParams) => {
   // debouncing in react js
   useEffect(() => {
     let timeOut
-    if (type == 'search') {
+    if (type === 'search') {
       // FETCHING LIST OF MOVIES (Fetch('search', query))
 
-      if (apiParams != '') {
+      if (apiParams !== '') {
         timeOut = setTimeout(() => {
           getCredentials(
             `${API_URL}&language=en-US&page=1&include_adult=false&query=${apiParams}`,
@@ -65,13 +65,13 @@ const Fetch = (type, apiParams) => {
       } else {
         setMovies([])
       }
-    } else if (type == 'movie') {
+    } else if (type === 'movie') {
       // FETCHING SINGLE OF MOVIE DETAILS (Fetch('movie', id))
 
       timeOut = setTimeout(() => {
         getCredentials(`${MOVIE_URL}/${apiParams}?api_key=${API_KEY}`, type)
       }, 1000)
-    } else if (type == 'trailer') {
+    } else if (type === 'trailer') {
       // FETCHING SINGLE OF MOVIE DETAILS (Fetch('trailer', id))
 
       timeOut = setTimeout(() => {
@@ -80,7 +80,7 @@ const Fetch = (type, apiParams) => {
           type
         )
       }, 1000)
-    } else if (type == 'credits') {
+    } else if (type === 'credits') {
       // FETCHING SINGLE OF MOVIE DETAILS (Fetch('credits', id))
 
       timeOut = setTimeout(() => {

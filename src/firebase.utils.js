@@ -2,13 +2,13 @@ import { initializeApp } from 'firebase/app'
 import {
   getFirestore,
   collection,
-  getDocs,
-  getDoc,
-  deleteDoc,
-  doc,
+  // getDocs,
+  // getDoc,
+  // deleteDoc,
+  // doc,
   onSnapshot,
-  query,
-  where,
+  // query,
+  // where,
 } from 'firebase/firestore'
 
 // https://firebase.google.com/docs/web/setup#available-libraries

@@ -4,11 +4,11 @@ import { useGlobalContext } from './Context'
 const imgUrl = 'https://via.placeholder.com/200/200'
 
 const Search = () => {
-  const { id, setId } = useGlobalContext()
+  const { setId } = useGlobalContext()
   const { query, setQuery } = useGlobalContext()
-  const { movies, isLoading } = useGlobalContext()
+  const { movies } = useGlobalContext()
 
-  if (query == ' ') setQuery('')
+  if (query === ' ') setQuery('')
 
   return (
     <>
@@ -86,7 +86,7 @@ const Search = () => {
                             alt='#'
                           />
                           <p>
-                            {movieName.length > 13
+                            {movieName.length > 26
                               ? `${movieName}...`
                               : movieName}
                           </p>

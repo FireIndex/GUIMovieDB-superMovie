@@ -406,9 +406,6 @@ textarea {
   font-size: 14px;
   font-weight: 400;
 }
-form button:hover {
-  background-color: #265df2;
-}
 form button i,
 form .backBtn i {
   margin: 0 6px;

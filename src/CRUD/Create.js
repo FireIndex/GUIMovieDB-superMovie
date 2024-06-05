@@ -33,7 +33,7 @@ function Create() {
       var currentId = movie.imdb_id ? movie.id + movie.imdb_id : `${movie.id}-m`
       dbDocs.map((curDoc) => {
         Object.keys(curDoc).map((docItem) => {
-          if (curDoc['id'] == currentId) {
+          if (curDoc['id'] === currentId) {
             // do not use setAlreadyStore other wise it will run infinite time
             // b/z when we use set it will run map again and the set value then map again
             // we can use in push data function
@@ -47,7 +47,7 @@ function Create() {
       // assign value, which match key
       Object.keys(data).map((data_cur) => {
         Object.keys(movie).map((movie_cur) => {
-          if (data_cur == movie_cur) {
+          if (data_cur === movie_cur) {
             data[data_cur] = movie[movie_cur]
           }
         })
@@ -94,7 +94,7 @@ function Create() {
     if (trailer) {
       data.trailer_key = ''
       trailer.map((curItem) => {
-        if (curItem.type == 'Trailer') {
+        if (curItem.type === 'Trailer') {
           data.trailer_key = 'https://www.youtube.com/watch?v=' + curItem.key
         }
       })
@@ -113,7 +113,7 @@ function Create() {
       temp_store = []
 
       credits.crew.map((curItem) => {
-        if (curItem.department == 'Directing') {
+        if (curItem.department === 'Directing') {
           temp_store.push({ id: curItem.id, name: curItem.name })
         }
       })
@@ -445,7 +445,7 @@ function Create() {
                               <label className='lable'>Downloading Link</label>
                               <input
                                 type='text'
-                                placeholder='Dropbox downloading link (copy)'
+                                placeholder='Downloading link'
                                 name='downloading_link'
                                 value={curItem.downloading_link}
                                 readOnly
@@ -533,7 +533,7 @@ function Create() {
                     <label className='lable'>Downloading Link</label>
                     <input
                       type='text'
-                      placeholder='Dropbox downloading link (copy)'
+                      placeholder='Downloading link'
                       name='downloading_link'
                       value={downDict.downloading_link}
                       onChange={getDownData}

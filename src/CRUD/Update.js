@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useGlobalContext } from '../Component/Context'
 import { db, dbDocs } from '../firebase.utils.js'
 import { updateDoc, doc } from 'firebase/firestore'
@@ -34,10 +34,10 @@ function Update() {
       var currentId = movie.imdb_id ? movie.id + movie.imdb_id : `${movie.id}-m`
       dbDocs.map((curDoc) => {
         Object.keys(curDoc).map((docItem) => {
-          if (curDoc['id'] == currentId) {
+          if (curDoc['id'] === currentId) {
             documentId = curDoc['docId']
             alreadyStore = true
-            if (docItem != 'docId') {
+            if (docItem !== 'docId') {
               data[docItem] = curDoc[docItem]
             }
           }
@@ -68,7 +68,7 @@ function Update() {
     name = e.target.name
     value = e.target.value
 
-    if (name == 'runtime') {
+    if (name === 'runtime') {
       data[name] = Number(value)
     } else {
       data[name] = value
